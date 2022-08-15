@@ -1,0 +1,2647 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20221.22.0712.0324                               -->
+<workbook original-version='18.1' source-build='2022.1.4 (20221.22.0712.0324)' source-platform='mac' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <BasicButtonObject />
+    <CollapsiblePane />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelExtractV2.true...ObjectModelExtractV2 />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <VizInTooltipHideWorksheet />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+  </document-format-change-manifest>
+  <repository-location id='NashvilleEventDashboard' path='/workbooks' revision='1.7' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='venue_capacities+' inline='true' name='federated.0j9ml6512ky7c214df6h30l8mprs' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='venue_capacities' name='textscan.0fa78661gkr71z1do9mcd12tk1qc'>
+            <connection class='textscan' directory='/Users/michaelnorman/Documents/NSS/DDA7-Capstone-Michael/data' filename='venue_capacities.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+          <named-connection caption='major_categories' name='textscan.1hukrs117ox7kb155ng870bl8ecc'>
+            <connection class='textscan' directory='/Users/michaelnorman/Documents/NSS/DDA7-Capstone-Michael/data' filename='major_categories.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+          <named-connection caption='venue_major_categories' name='textscan.184b8751bx4tbc15ux8p71lnih7c'>
+            <connection class='textscan' directory='/Users/michaelnorman/Documents/NSS/DDA7-Capstone-Michael/data' filename='venue_major_categories.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1hukrs117ox7kb155ng870bl8ecc' name='major_categories.csv' table='[major_categories#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='string' name='name' ordinal='1' />
+            <column datatype='string' name='tags' ordinal='2' />
+            <column datatype='string' name='category' ordinal='3' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation connection='textscan.0fa78661gkr71z1do9mcd12tk1qc' name='master_df.csv' table='[master_df#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='F1' ordinal='0' />
+              <column datatype='string' name='name' ordinal='1' />
+              <column datatype='string' name='venue' ordinal='2' />
+              <column datatype='string' name='location' ordinal='3' />
+              <column datatype='date' name='dates' ordinal='4' />
+              <column datatype='string' name='times' ordinal='5' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1hukrs117ox7kb155ng870bl8ecc' name='major_categories.csv' table='[major_categories#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='F1' ordinal='0' />
+              <column datatype='string' name='name' ordinal='1' />
+              <column datatype='string' name='tags' ordinal='2' />
+              <column datatype='string' name='category' ordinal='3' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0fa78661gkr71z1do9mcd12tk1qc' name='venue_capacities.csv' table='[venue_capacities#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='F1' ordinal='0' />
+              <column datatype='string' name='Venue' ordinal='1' />
+              <column datatype='real' name='Capacity' ordinal='2' />
+              <column datatype='string' name='Size' ordinal='3' />
+            </columns>
+          </relation>
+          <relation connection='textscan.184b8751bx4tbc15ux8p71lnih7c' name='venue_major_categories.csv' table='[venue_major_categories#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='F1' ordinal='0' />
+              <column datatype='string' name='venue' ordinal='1' />
+              <column datatype='string' name='tags' ordinal='2' />
+              <column datatype='string' name='category' ordinal='3' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[Capacity]' value='[venue_capacities.csv].[Capacity]' />
+          <map key='[F1 (major_categories.csv)]' value='[major_categories.csv].[F1]' />
+          <map key='[F1 (venue_capacities.csv)]' value='[venue_capacities.csv].[F1]' />
+          <map key='[F1 (venue_major_categories.csv)]' value='[venue_major_categories.csv].[F1]' />
+          <map key='[F1]' value='[master_df.csv].[F1]' />
+          <map key='[Size]' value='[venue_capacities.csv].[Size]' />
+          <map key='[Venue]' value='[venue_capacities.csv].[Venue]' />
+          <map key='[category (venue_major_categories.csv)]' value='[venue_major_categories.csv].[category]' />
+          <map key='[category]' value='[major_categories.csv].[category]' />
+          <map key='[dates]' value='[master_df.csv].[dates]' />
+          <map key='[location]' value='[master_df.csv].[location]' />
+          <map key='[name (major_categories.csv)]' value='[major_categories.csv].[name]' />
+          <map key='[name]' value='[master_df.csv].[name]' />
+          <map key='[tags (major_categories.csv)]' value='[major_categories.csv].[tags]' />
+          <map key='[tags]' value='[venue_major_categories.csv].[tags]' />
+          <map key='[times]' value='[master_df.csv].[times]' />
+          <map key='[venue (venue_major_categories.csv)]' value='[venue_major_categories.csv].[venue]' />
+          <map key='[venue]' value='[master_df.csv].[venue]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[master_df.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[major_categories.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[venue_capacities.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[venue_major_categories.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[master_df.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[master_df.csv_8880569787F44B418870925478D3C058]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[name]</local-name>
+            <parent-name>[master_df.csv]</parent-name>
+            <remote-alias>name</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[master_df.csv_8880569787F44B418870925478D3C058]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>venue</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[venue]</local-name>
+            <parent-name>[master_df.csv]</parent-name>
+            <remote-alias>venue</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[master_df.csv_8880569787F44B418870925478D3C058]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>location</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[location]</local-name>
+            <parent-name>[master_df.csv]</parent-name>
+            <remote-alias>location</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[master_df.csv_8880569787F44B418870925478D3C058]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>dates</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[dates]</local-name>
+            <parent-name>[master_df.csv]</parent-name>
+            <remote-alias>dates</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[master_df.csv_8880569787F44B418870925478D3C058]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>times</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[times]</local-name>
+            <parent-name>[master_df.csv]</parent-name>
+            <remote-alias>times</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[master_df.csv_8880569787F44B418870925478D3C058]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1 (major_categories.csv)]</local-name>
+            <parent-name>[major_categories.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[major_categories.csv_2649929B51624E1B8596D127193F3A12]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[name (major_categories.csv)]</local-name>
+            <parent-name>[major_categories.csv]</parent-name>
+            <remote-alias>name</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[major_categories.csv_2649929B51624E1B8596D127193F3A12]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tags</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[tags (major_categories.csv)]</local-name>
+            <parent-name>[major_categories.csv]</parent-name>
+            <remote-alias>tags</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[major_categories.csv_2649929B51624E1B8596D127193F3A12]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[category]</local-name>
+            <parent-name>[major_categories.csv]</parent-name>
+            <remote-alias>category</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[major_categories.csv_2649929B51624E1B8596D127193F3A12]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1 (venue_capacities.csv)]</local-name>
+            <parent-name>[venue_capacities.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[venue_capacities.csv_6BBF3C505CE64C14A34667A4CE568E71]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Venue</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Venue]</local-name>
+            <parent-name>[venue_capacities.csv]</parent-name>
+            <remote-alias>Venue</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[venue_capacities.csv_6BBF3C505CE64C14A34667A4CE568E71]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Capacity</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Capacity]</local-name>
+            <parent-name>[venue_capacities.csv]</parent-name>
+            <remote-alias>Capacity</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[venue_capacities.csv_6BBF3C505CE64C14A34667A4CE568E71]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Size</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Size]</local-name>
+            <parent-name>[venue_capacities.csv]</parent-name>
+            <remote-alias>Size</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[venue_capacities.csv_6BBF3C505CE64C14A34667A4CE568E71]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1 (venue_major_categories.csv)]</local-name>
+            <parent-name>[venue_major_categories.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[venue_major_categories.csv_CE0EB5CED950410AB96F05959D51A2DD]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>venue</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[venue (venue_major_categories.csv)]</local-name>
+            <parent-name>[venue_major_categories.csv]</parent-name>
+            <remote-alias>venue</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[venue_major_categories.csv_CE0EB5CED950410AB96F05959D51A2DD]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tags</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[tags]</local-name>
+            <parent-name>[venue_major_categories.csv]</parent-name>
+            <remote-alias>tags</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[venue_major_categories.csv_CE0EB5CED950410AB96F05959D51A2DD]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[category (venue_major_categories.csv)]</local-name>
+            <parent-name>[venue_major_categories.csv]</parent-name>
+            <remote-alias>category</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[venue_major_categories.csv_CE0EB5CED950410AB96F05959D51A2DD]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Combined Capacity' datatype='real' name='[Calculation_129056342782562304]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([Capacity])*[Calculation_129056342785335297]' />
+      </column>
+      <column caption='Count of Event' datatype='integer' name='[Calculation_129056342785335297]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT([name])' />
+      </column>
+      <column caption='Zero Line' datatype='integer' name='[Calculation_5035024450376126466]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='0' />
+      </column>
+      <column aggregation='None' datatype='integer' name='[Capacity (bin)]' role='dimension' type='quantitative'>
+        <calculation class='bin' decimals='3' formula='[Capacity]' peg='0' size='7672' />
+      </column>
+      <column datatype='real' name='[Capacity]' role='measure' type='quantitative' />
+      <column caption='F1 (major categories.csv)' datatype='integer' hidden='true' name='[F1 (major_categories.csv)]' role='measure' type='quantitative' />
+      <column caption='F1 (venue capacities.csv)' datatype='integer' hidden='true' name='[F1 (venue_capacities.csv)]' role='measure' type='quantitative' />
+      <column caption='F1 (venue major categories.csv)' datatype='integer' hidden='true' name='[F1 (venue_major_categories.csv)]' role='measure' type='quantitative' />
+      <column datatype='integer' hidden='true' name='[F1]' role='measure' type='quantitative' />
+      <column datatype='string' name='[Size]' role='dimension' type='nominal' />
+      <column caption='Venue1' datatype='string' name='[Venue]' role='dimension' type='nominal' />
+      <_.fcp.ObjectModelTableType.true...column caption='major_categories.csv' datatype='table' name='[__tableau_internal_object_id__].[major_categories.csv_2649929B51624E1B8596D127193F3A12]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='master_df.csv' datatype='table' name='[__tableau_internal_object_id__].[master_df.csv_8880569787F44B418870925478D3C058]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='venue_capacities.csv' datatype='table' name='[__tableau_internal_object_id__].[venue_capacities.csv_6BBF3C505CE64C14A34667A4CE568E71]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='venue_major_categories.csv' datatype='table' name='[__tableau_internal_object_id__].[venue_major_categories.csv_CE0EB5CED950410AB96F05959D51A2DD]' role='measure' type='quantitative' />
+      <column datatype='string' name='[category]' role='dimension' type='nominal' />
+      <column caption='Dates' datatype='date' name='[dates]' role='dimension' type='ordinal' />
+      <column caption='Location' datatype='string' name='[location]' role='dimension' type='nominal' />
+      <column datatype='string' name='[name (major_categories.csv)]' role='dimension' type='nominal' />
+      <column caption='Event' datatype='string' name='[name]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[tags (major_categories.csv)]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[tags]' role='dimension' type='nominal' />
+      <column caption='Times' datatype='string' name='[times]' role='dimension' type='nominal' />
+      <column datatype='string' name='[venue (venue_major_categories.csv)]' role='dimension' type='nominal' />
+      <column caption='Venue' datatype='string' name='[venue]' role='dimension' type='nominal' />
+      <column-instance column='[dates]' derivation='Month' name='[mn:dates:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[category]' derivation='None' name='[none:category:nk]' pivot='key' type='nominal' />
+      <column-instance column='[name (major_categories.csv)]' derivation='None' name='[none:name (major_categories.csv):nk]' pivot='key' type='nominal' />
+      <column-instance column='[name]' derivation='None' name='[none:name:nk]' pivot='key' type='nominal' />
+      <column-instance column='[venue (venue_major_categories.csv)]' derivation='None' name='[none:venue (venue_major_categories.csv):nk]' pivot='key' type='nominal' />
+      <column-instance column='[venue]' derivation='None' name='[none:venue:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Calculation_129056342782562304]' derivation='User' name='[pcto:usr:Calculation_129056342782562304:qk:1]' pivot='key' type='quantitative'>
+        <table-calc ordering-field='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:name:nk]' ordering-type='Field' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[Calculation_129056342782562304]' derivation='User' name='[pcto:usr:Calculation_129056342782562304:qk]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Columns' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[Calculation_129056342785335297]' derivation='User' name='[pcto:usr:Calculation_129056342785335297:qk:2]' pivot='key' type='quantitative'>
+        <table-calc ordering-field='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:name:nk]' ordering-type='Field' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[Calculation_129056342782562304]' derivation='User' name='[usr:Calculation_129056342782562304:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[dates]' derivation='Weekday' name='[wd:dates:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[dates]' derivation='Week' name='[wk:dates:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[dates]' derivation='Year' name='[yr:dates:ok]' pivot='key' type='ordinal' />
+      <group caption='Action (Dates,MONTH(Dates),WEEK(Dates),WEEKDAY(Dates))' hidden='true' name='[Action (Dates,MONTH(Dates),WEEK(Dates),WEEKDAY(Dates))]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[dates]' />
+          <groupfilter function='level-members' level='[mn:dates:ok]' />
+          <groupfilter function='level-members' level='[wk:dates:ok]' />
+          <groupfilter function='level-members' level='[wd:dates:ok]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (category)' hidden='true' name='[Action (category)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[category]' />
+        </groupfilter>
+      </group>
+      <group hidden='true' name='[Exclusions (category,venue (venue_major_categories.csv))]' name-style='unqualified' user:auto-column='exclude'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:category:nk]' />
+          <groupfilter function='level-members' level='[none:venue (venue_major_categories.csv):nk]' />
+        </groupfilter>
+      </group>
+      <group hidden='true' name='[Exclusions (name (major_categories.csv),venue (venue_major_categories.csv))]' name-style='unqualified' user:auto-column='exclude'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:name (major_categories.csv):nk]' />
+          <groupfilter function='level-members' level='[none:venue (venue_major_categories.csv):nk]' />
+        </groupfilter>
+      </group>
+      <group caption='Tooltip (Dates,MONTH(Dates),WEEK(Dates),WEEKDAY(Dates))' hidden='true' name='[Tooltip (Dates,MONTH(Dates),WEEK(Dates),WEEKDAY(Dates))]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[dates]' />
+          <groupfilter function='level-members' level='[mn:dates:ok]' />
+          <groupfilter function='level-members' level='[wk:dates:ok]' />
+          <groupfilter function='level-members' level='[wd:dates:ok]' />
+        </groupfilter>
+      </group>
+      <group caption='Tooltip (MONTH(Dates),WEEK(Dates),WEEKDAY(Dates))' hidden='true' name='[Tooltip (MONTH(Dates),WEEK(Dates),WEEKDAY(Dates))]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[mn:dates:ok]' />
+          <groupfilter function='level-members' level='[wk:dates:ok]' />
+          <groupfilter function='level-members' level='[wd:dates:ok]' />
+        </groupfilter>
+      </group>
+      <group caption='Tooltip (Size)' hidden='true' name='[Tooltip (Size)]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Size]' />
+        </groupfilter>
+      </group>
+      <group caption='Tooltip (WEEK(Dates),WEEKDAY(Dates))' hidden='true' name='[Tooltip (WEEK(Dates),WEEKDAY(Dates))]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[wk:dates:ok]' />
+          <groupfilter function='level-members' level='[wd:dates:ok]' />
+        </groupfilter>
+      </group>
+      <group caption='Tooltip (YEAR(Dates),MONTH(Dates),WEEK(Dates),WEEKDAY(Dates))' hidden='true' name='[Tooltip (YEAR(Dates),MONTH(Dates),WEEK(Dates),WEEKDAY(Dates))]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[yr:dates:ok]' />
+          <groupfilter function='level-members' level='[mn:dates:ok]' />
+          <groupfilter function='level-members' level='[wk:dates:ok]' />
+          <groupfilter function='level-members' level='[wd:dates:ok]' />
+        </groupfilter>
+      </group>
+      <group caption='Tooltip (category,Dates,MONTH(Dates),WEEK(Dates),WEEKDAY(Dates))' hidden='true' name='[Tooltip (category,Dates,MONTH(Dates),WEEK(Dates),WEEKDAY(Dates))]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[category]' />
+          <groupfilter function='level-members' level='[dates]' />
+          <groupfilter function='level-members' level='[mn:dates:ok]' />
+          <groupfilter function='level-members' level='[wk:dates:ok]' />
+          <groupfilter function='level-members' level='[wd:dates:ok]' />
+        </groupfilter>
+      </group>
+      <group caption='Tooltip (category,venue (venue_major_categories.csv))' hidden='true' name='[Tooltip (category,venue (venue_major_categories.csv))]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[category]' />
+          <groupfilter function='level-members' level='[venue (venue_major_categories.csv)]' />
+        </groupfilter>
+      </group>
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='/Users/michaelnorman/Documents/My Tableau Repository/Datasources/venue_capacitiestb.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='major_categories.csv_2649929B51624E1B8596D127193F3A12' table='[Extract].[major_categories.csv_2649929B51624E1B8596D127193F3A12]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+            <relation name='master_df.csv_8880569787F44B418870925478D3C058' table='[Extract].[master_df.csv_8880569787F44B418870925478D3C058]' type='table' />
+            <relation name='major_categories.csv_2649929B51624E1B8596D127193F3A12' table='[Extract].[major_categories.csv_2649929B51624E1B8596D127193F3A12]' type='table' />
+            <relation name='venue_capacities.csv_6BBF3C505CE64C14A34667A4CE568E71' table='[Extract].[venue_capacities.csv_6BBF3C505CE64C14A34667A4CE568E71]' type='table' />
+            <relation name='venue_major_categories.csv_CE0EB5CED950410AB96F05959D51A2DD' table='[Extract].[venue_major_categories.csv_CE0EB5CED950410AB96F05959D51A2DD]' type='table' />
+          </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+          <cols>
+            <map key='[Capacity]' value='[venue_capacities.csv_6BBF3C505CE64C14A34667A4CE568E71].[Capacity]' />
+            <map key='[Size]' value='[venue_capacities.csv_6BBF3C505CE64C14A34667A4CE568E71].[Size]' />
+            <map key='[Venue]' value='[venue_capacities.csv_6BBF3C505CE64C14A34667A4CE568E71].[Venue]' />
+            <map key='[category (venue_major_categories.csv)]' value='[venue_major_categories.csv_CE0EB5CED950410AB96F05959D51A2DD].[category]' />
+            <map key='[category]' value='[major_categories.csv_2649929B51624E1B8596D127193F3A12].[category]' />
+            <map key='[dates]' value='[master_df.csv_8880569787F44B418870925478D3C058].[dates]' />
+            <map key='[location]' value='[master_df.csv_8880569787F44B418870925478D3C058].[location]' />
+            <map key='[name (major_categories.csv)]' value='[major_categories.csv_2649929B51624E1B8596D127193F3A12].[name]' />
+            <map key='[name]' value='[master_df.csv_8880569787F44B418870925478D3C058].[name]' />
+            <map key='[tags (major_categories.csv)]' value='[major_categories.csv_2649929B51624E1B8596D127193F3A12].[tags]' />
+            <map key='[times]' value='[master_df.csv_8880569787F44B418870925478D3C058].[times]' />
+            <map key='[venue (venue_major_categories.csv)]' value='[venue_major_categories.csv_CE0EB5CED950410AB96F05959D51A2DD].[venue]' />
+            <map key='[venue]' value='[master_df.csv_8880569787F44B418870925478D3C058].[venue]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[name]</local-name>
+              <parent-name>[master_df.csv_8880569787F44B418870925478D3C058]</parent-name>
+              <remote-alias>name</remote-alias>
+              <ordinal>0</ordinal>
+              <family>master_df.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>182</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>venue</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[venue]</local-name>
+              <parent-name>[master_df.csv_8880569787F44B418870925478D3C058]</parent-name>
+              <remote-alias>venue</remote-alias>
+              <ordinal>1</ordinal>
+              <family>master_df.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>22</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>location</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[location]</local-name>
+              <parent-name>[master_df.csv_8880569787F44B418870925478D3C058]</parent-name>
+              <remote-alias>location</remote-alias>
+              <ordinal>2</ordinal>
+              <family>master_df.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>17</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>dates</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[dates]</local-name>
+              <parent-name>[master_df.csv_8880569787F44B418870925478D3C058]</parent-name>
+              <remote-alias>dates</remote-alias>
+              <ordinal>3</ordinal>
+              <family>master_df.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>114</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>times</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[times]</local-name>
+              <parent-name>[master_df.csv_8880569787F44B418870925478D3C058]</parent-name>
+              <remote-alias>times</remote-alias>
+              <ordinal>4</ordinal>
+              <family>master_df.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>17</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[name (major_categories.csv)]</local-name>
+              <parent-name>[major_categories.csv_2649929B51624E1B8596D127193F3A12]</parent-name>
+              <remote-alias>name</remote-alias>
+              <ordinal>5</ordinal>
+              <family>major_categories.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>135</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>tags</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[tags (major_categories.csv)]</local-name>
+              <parent-name>[major_categories.csv_2649929B51624E1B8596D127193F3A12]</parent-name>
+              <remote-alias>tags</remote-alias>
+              <ordinal>6</ordinal>
+              <family>major_categories.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>25</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>category</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[category]</local-name>
+              <parent-name>[major_categories.csv_2649929B51624E1B8596D127193F3A12]</parent-name>
+              <remote-alias>category</remote-alias>
+              <ordinal>7</ordinal>
+              <family>major_categories.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Venue</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Venue]</local-name>
+              <parent-name>[venue_capacities.csv_6BBF3C505CE64C14A34667A4CE568E71]</parent-name>
+              <remote-alias>Venue</remote-alias>
+              <ordinal>8</ordinal>
+              <family>venue_capacities.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>26</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Capacity</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Capacity]</local-name>
+              <parent-name>[venue_capacities.csv_6BBF3C505CE64C14A34667A4CE568E71]</parent-name>
+              <remote-alias>Capacity</remote-alias>
+              <ordinal>9</ordinal>
+              <family>venue_capacities.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>22</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Size</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Size]</local-name>
+              <parent-name>[venue_capacities.csv_6BBF3C505CE64C14A34667A4CE568E71]</parent-name>
+              <remote-alias>Size</remote-alias>
+              <ordinal>10</ordinal>
+              <family>venue_capacities.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>venue</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[venue (venue_major_categories.csv)]</local-name>
+              <parent-name>[venue_major_categories.csv_CE0EB5CED950410AB96F05959D51A2DD]</parent-name>
+              <remote-alias>venue</remote-alias>
+              <ordinal>11</ordinal>
+              <family>venue_major_categories.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>16</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>category</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[category (venue_major_categories.csv)]</local-name>
+              <parent-name>[venue_major_categories.csv_CE0EB5CED950410AB96F05959D51A2DD]</parent-name>
+              <remote-alias>category</remote-alias>
+              <ordinal>12</ordinal>
+              <family>venue_major_categories.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-hidden-fields='true' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:venue:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;FirstBank Amphitheater&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;War Memorial Auditorium&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Bridgestone Arena&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Marathon Music Works&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Grand Ole Opry House&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;City Winery - Nashville&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;TN Performing Arts Center Andrew Jackson Hall&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;3rd &amp; Lindsley&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Zanies Comedy Club Nashville&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Schermerhorn Symphony Center&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;City Winery Nashville&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Nashville Municipal Auditorium&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Nissan Stadium&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;The Basement East&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;TN Performing Arts Center Andrew Johnson Theater&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;James K Polk Theater&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Country Music Hall of Fame and Museum&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Andrew Jackson Hall&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Zanies Comedy Showplace Nashville&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Ryman Auditorium&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;James K. Polk Theater&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Ascend Amphitheater&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[wd:dates:ok]' type='palette'>
+            <map to='#499894'>
+              <bucket>9</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>29</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>1</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>21</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>5</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>25</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>13</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>10</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>30</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>6</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>26</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>19</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>2</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>22</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>17</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>7</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>27</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>14</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>15</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>18</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>20</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>11</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>31</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>8</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>28</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>3</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>23</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>16</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>12</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>4</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>24</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:category:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Comedy&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Theatre &amp; Musicals&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Other&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Concert&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0j9ml6512ky7c214df6h30l8mprs].[pcto:usr:Calculation_129056342785335297:qk:2]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0j9ml6512ky7c214df6h30l8mprs].[pcto:usr:Calculation_129056342782562304:qk:1]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0j9ml6512ky7c214df6h30l8mprs].[pcto:usr:Calculation_129056342782562304:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0j9ml6512ky7c214df6h30l8mprs].[usr:Calculation_129056342782562304:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='name (most popular event-categories.csv)' />
+        <field-sort-custom-order field='tags' />
+      </field-sort-info>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='major_categories.csv' id='major_categories.csv_2649929B51624E1B8596D127193F3A12'>
+            <properties context=''>
+              <relation connection='textscan.1hukrs117ox7kb155ng870bl8ecc' name='major_categories.csv' table='[major_categories#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='F1' ordinal='0' />
+                  <column datatype='string' name='name' ordinal='1' />
+                  <column datatype='string' name='tags' ordinal='2' />
+                  <column datatype='string' name='category' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='major_categories.csv_2649929B51624E1B8596D127193F3A12' table='[Extract].[major_categories.csv_2649929B51624E1B8596D127193F3A12]' type='table' />
+            </properties>
+          </object>
+          <object caption='master_df.csv' id='master_df.csv_8880569787F44B418870925478D3C058'>
+            <properties context=''>
+              <relation connection='textscan.0fa78661gkr71z1do9mcd12tk1qc' name='master_df.csv' table='[master_df#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='F1' ordinal='0' />
+                  <column datatype='string' name='name' ordinal='1' />
+                  <column datatype='string' name='venue' ordinal='2' />
+                  <column datatype='string' name='location' ordinal='3' />
+                  <column datatype='date' name='dates' ordinal='4' />
+                  <column datatype='string' name='times' ordinal='5' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='master_df.csv_8880569787F44B418870925478D3C058' table='[Extract].[master_df.csv_8880569787F44B418870925478D3C058]' type='table' />
+            </properties>
+          </object>
+          <object caption='venue_capacities.csv' id='venue_capacities.csv_6BBF3C505CE64C14A34667A4CE568E71'>
+            <properties context=''>
+              <relation connection='textscan.0fa78661gkr71z1do9mcd12tk1qc' name='venue_capacities.csv' table='[venue_capacities#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='F1' ordinal='0' />
+                  <column datatype='string' name='Venue' ordinal='1' />
+                  <column datatype='real' name='Capacity' ordinal='2' />
+                  <column datatype='string' name='Size' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='venue_capacities.csv_6BBF3C505CE64C14A34667A4CE568E71' table='[Extract].[venue_capacities.csv_6BBF3C505CE64C14A34667A4CE568E71]' type='table' />
+            </properties>
+          </object>
+          <object caption='venue_major_categories.csv' id='venue_major_categories.csv_CE0EB5CED950410AB96F05959D51A2DD'>
+            <properties context=''>
+              <relation connection='textscan.184b8751bx4tbc15ux8p71lnih7c' name='venue_major_categories.csv' table='[venue_major_categories#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='F1' ordinal='0' />
+                  <column datatype='string' name='venue' ordinal='1' />
+                  <column datatype='string' name='tags' ordinal='2' />
+                  <column datatype='string' name='category' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='venue_major_categories.csv_CE0EB5CED950410AB96F05959D51A2DD' table='[Extract].[venue_major_categories.csv_CE0EB5CED950410AB96F05959D51A2DD]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[name]' />
+              <expression op='[name (major_categories.csv)]' />
+            </expression>
+            <first-end-point object-id='master_df.csv_8880569787F44B418870925478D3C058' />
+            <second-end-point object-id='major_categories.csv_2649929B51624E1B8596D127193F3A12' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[venue]' />
+              <expression op='[Venue]' />
+            </expression>
+            <first-end-point object-id='master_df.csv_8880569787F44B418870925478D3C058' />
+            <second-end-point object-id='venue_capacities.csv_6BBF3C505CE64C14A34667A4CE568E71' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[venue]' />
+              <expression op='[venue (venue_major_categories.csv)]' />
+            </expression>
+            <first-end-point object-id='master_df.csv_8880569787F44B418870925478D3C058' />
+            <second-end-point object-id='venue_major_categories.csv_CE0EB5CED950410AB96F05959D51A2DD' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <actions>
+    <action caption='Filter 1 (generated)' name='[Action1_FBDBCDEB17F148A79C63D5BDBC00CF2B]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 1' type='sheet' worksheet='Pop Events by Category' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+    <action caption='Filter 2 (generated)' name='[Action2_F3D60C85019A4196A8B336317211D4F3]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 1' type='sheet' worksheet='Sheet 8' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Combined Venue Capacity'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Total Potential Capacity in the Fall Across All Events per Venue</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='venue_capacities+' name='federated.0j9ml6512ky7c214df6h30l8mprs' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0j9ml6512ky7c214df6h30l8mprs'>
+            <column caption='Combined Capacity' datatype='real' name='[Calculation_129056342782562304]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([Capacity])*[Calculation_129056342785335297]' />
+            </column>
+            <column caption='Count of Event' datatype='integer' name='[Calculation_129056342785335297]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT([name])' />
+            </column>
+            <column datatype='real' name='[Capacity]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Size]' role='dimension' type='nominal' />
+            <column caption='Venue1' datatype='string' name='[Venue]' role='dimension' type='nominal' />
+            <column caption='Event' datatype='string' name='[name]' role='dimension' type='nominal' />
+            <column-instance column='[Venue]' derivation='None' name='[none:Venue:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_129056342782562304]' derivation='User' name='[usr:Calculation_129056342782562304:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_129056342785335297]' derivation='User' name='[usr:Calculation_129056342785335297:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0j9ml6512ky7c214df6h30l8mprs].[Tooltip (Size)]'>
+            <groupfilter function='level-members' level='[Size]' user:ui-action-filter='[Action - Combined Venue Capacity]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:Venue:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Venue:nk]' />
+              <groupfilter function='member' level='[none:Venue:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <filter class='quantitative' column='[federated.0j9ml6512ky7c214df6h30l8mprs].[usr:Calculation_129056342785335297:qk]' included-values='in-range'>
+            <min>1</min>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:Venue:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0j9ml6512ky7c214df6h30l8mprs].[usr:Calculation_129056342782562304:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0j9ml6512ky7c214df6h30l8mprs].[none:Venue:nk]</column>
+            <column>[federated.0j9ml6512ky7c214df6h30l8mprs].[usr:Calculation_129056342785335297:qk]</column>
+            <column>[federated.0j9ml6512ky7c214df6h30l8mprs].[Tooltip (Size)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:Venue:nk]' value='256' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='show-null-value-warning' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0j9ml6512ky7c214df6h30l8mprs].[usr:Calculation_129056342782562304:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0j9ml6512ky7c214df6h30l8mprs].[none:Venue:nk]</rows>
+        <cols>[federated.0j9ml6512ky7c214df6h30l8mprs].[usr:Calculation_129056342782562304:qk]</cols>
+      </table>
+      <simple-id uuid='{7E6D6AA6-9873-484E-A088-53C5AD1B1FAC}' />
+    </worksheet>
+    <worksheet name='Days of the Week'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true'>Events based on Days of the Week</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='venue_capacities+' name='federated.0j9ml6512ky7c214df6h30l8mprs' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0j9ml6512ky7c214df6h30l8mprs'>
+            <column caption='Count of Event' datatype='integer' name='[Calculation_129056342785335297]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT([name])' />
+            </column>
+            <column datatype='real' name='[Capacity]' role='measure' type='quantitative' />
+            <column-instance column='[Capacity]' derivation='Avg' name='[avg:Capacity:qk]' pivot='key' type='quantitative' />
+            <column datatype='string' name='[category]' role='dimension' type='nominal' />
+            <column caption='Dates' datatype='date' name='[dates]' role='dimension' type='ordinal' />
+            <column caption='Event' datatype='string' name='[name]' role='dimension' type='nominal' />
+            <column-instance column='[name]' derivation='Count' name='[pcto:cnt:name:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[Calculation_129056342785335297]' derivation='User' name='[usr:Calculation_129056342785335297:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[dates]' derivation='Weekday' name='[wd:dates:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0j9ml6512ky7c214df6h30l8mprs].[Action (category)]'>
+            <groupfilter function='level-members' level='[category]' user:ui-action-filter='[Action1_FBDBCDEB17F148A79C63D5BDBC00CF2B]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0j9ml6512ky7c214df6h30l8mprs].[wd:dates:ok]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[wd:dates:ok]' />
+              <groupfilter function='member' level='[wd:dates:ok]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0j9ml6512ky7c214df6h30l8mprs].[Action (category)]</column>
+            <column>[federated.0j9ml6512ky7c214df6h30l8mprs].[wd:dates:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <size column='[federated.0j9ml6512ky7c214df6h30l8mprs].[usr:Calculation_129056342785335297:qk]' />
+              <text column='[federated.0j9ml6512ky7c214df6h30l8mprs].[wd:dates:ok]' />
+              <text column='[federated.0j9ml6512ky7c214df6h30l8mprs].[avg:Capacity:qk]' />
+              <text column='[federated.0j9ml6512ky7c214df6h30l8mprs].[pcto:cnt:name:qk]' />
+              <color column='[federated.0j9ml6512ky7c214df6h30l8mprs].[wd:dates:ok]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Weekday Frequency of Events:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0j9ml6512ky7c214df6h30l8mprs].[wd:dates:ok]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Average Event Capacity:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0j9ml6512ky7c214df6h30l8mprs].[avg:Capacity:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Number of Events:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0j9ml6512ky7c214df6h30l8mprs].[usr:Calculation_129056342785335297:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run bold='true'><![CDATA[<[federated.0j9ml6512ky7c214df6h30l8mprs].[wd:dates:ok]>]]></run>
+                <run>&#10;Average Capacity   </run>
+                <run bold='true'><![CDATA[<[federated.0j9ml6512ky7c214df6h30l8mprs].[avg:Capacity:qk]>]]></run>
+                <run>
+Percent of Shows Occuring on Day</run>
+                <run bold='true'><![CDATA[  <[federated.0j9ml6512ky7c214df6h30l8mprs].[pcto:cnt:name:qk]>]]></run>
+                <run bold='true'>Æ&#10;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{21288177-6DF8-419D-9494-D4D6258CB3A2}' />
+    </worksheet>
+    <worksheet name='Event Category By Venue'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#000000'>Capacities, Number of Shows, and Categories by Venue for the Most Popular Events</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='venue_capacities+' name='federated.0j9ml6512ky7c214df6h30l8mprs' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0j9ml6512ky7c214df6h30l8mprs'>
+            <column caption='Combined Capacity' datatype='real' name='[Calculation_129056342782562304]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([Capacity])*[Calculation_129056342785335297]' />
+            </column>
+            <column caption='Count of Event' datatype='integer' name='[Calculation_129056342785335297]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT([name])' />
+            </column>
+            <column caption='Zero Line' datatype='integer' name='[Calculation_5035024450376126466]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='0' />
+            </column>
+            <column datatype='real' name='[Capacity]' role='measure' type='quantitative' />
+            <column datatype='string' name='[category]' role='dimension' type='nominal' />
+            <column caption='Event' datatype='string' name='[name]' role='dimension' type='nominal' />
+            <column-instance column='[category]' derivation='None' name='[none:category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[venue (venue_major_categories.csv)]' derivation='None' name='[none:venue (venue_major_categories.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_5035024450376126466]' derivation='Sum' name='[sum:Calculation_5035024450376126466:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_129056342782562304]' derivation='User' name='[usr:Calculation_129056342782562304:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_129056342785335297]' derivation='User' name='[usr:Calculation_129056342785335297:qk]' pivot='key' type='quantitative' />
+            <column datatype='string' name='[venue (venue_major_categories.csv)]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0j9ml6512ky7c214df6h30l8mprs].[Exclusions (category,venue (venue_major_categories.csv))]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='level-members' level='[none:category:nk]' />
+                <groupfilter function='level-members' level='[none:venue (venue_major_categories.csv):nk]' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[none:category:nk]' member='%null%' />
+                <groupfilter function='member' level='[none:venue (venue_major_categories.csv):nk]' member='%null%' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:category:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:category:nk]' />
+              <groupfilter function='member' level='[none:category:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:venue (venue_major_categories.csv):nk]'>
+            <groupfilter from='&quot;Andrew Jackson Hall&quot;' function='range' level='[none:venue (venue_major_categories.csv):nk]' to='&quot;Zanies Comedy Showplace Nashville&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0j9ml6512ky7c214df6h30l8mprs].[Exclusions (category,venue (venue_major_categories.csv))]</column>
+            <column>[federated.0j9ml6512ky7c214df6h30l8mprs].[none:category:nk]</column>
+            <column>[federated.0j9ml6512ky7c214df6h30l8mprs].[none:venue (venue_major_categories.csv):nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0j9ml6512ky7c214df6h30l8mprs].[usr:Calculation_129056342782562304:qk]' field-type='quantitative' reverse='true' scope='cols' type='space' />
+            <format attr='title' class='0' field='[federated.0j9ml6512ky7c214df6h30l8mprs].[usr:Calculation_129056342782562304:qk]' scope='cols' value='Total Available Capacity this Fall' />
+            <format attr='title' class='0' field='[federated.0j9ml6512ky7c214df6h30l8mprs].[usr:Calculation_129056342785335297:qk]' scope='cols' value='Number of Events' />
+            <encoding attr='space' class='0' domain-expand='false' field='[federated.0j9ml6512ky7c214df6h30l8mprs].[sum:Calculation_5035024450376126466:qk]' field-type='quantitative' reverse='true' scope='cols' type='space' />
+            <format attr='title' class='0' field='[federated.0j9ml6512ky7c214df6h30l8mprs].[sum:Calculation_5035024450376126466:qk]' scope='cols' value='' />
+            <format attr='auto-subtitle' class='0' field='[federated.0j9ml6512ky7c214df6h30l8mprs].[sum:Calculation_5035024450376126466:qk]' scope='cols' value='false' />
+            <format attr='line-pattern-only' value='solid' />
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='border-width' value='0' />
+            <format attr='border-style' value='none' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='border-width' data-class='total' value='0' />
+            <format attr='border-style' data-class='total' value='none' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:category:nk]' value='false' />
+            <format attr='display' field='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:venue (venue_major_categories.csv):nk]' value='false' />
+            <format attr='color' value='#000000' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-width' data-class='total' value='0' />
+            <format attr='border-style' data-class='total' value='none' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='stroke-size' value='1' />
+            <format attr='stroke-color' value='#7f7f7f00' />
+            <format attr='line-visibility' value='on' />
+            <format attr='line-pattern-only' value='solid' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='line-pattern-only' value='solid' />
+            <format attr='stroke-color' value='#0000009d' />
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+            <format attr='line-pattern-only' scope='rows' value='solid' />
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='cols' value='1' />
+            <format attr='stroke-color' scope='cols' value='#f2f2f200' />
+            <format attr='line-visibility' scope='cols' value='on' />
+            <format attr='line-pattern-only' scope='cols' value='solid' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-color' value='#cbcbcb00' />
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+            <format attr='line-pattern-only' scope='rows' value='solid' />
+            <format attr='stroke-color' scope='rows' value='#000000ad' />
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+            <format attr='stroke-size' scope='rows' value='1' />
+            <format attr='line-visibility' scope='rows' value='on' />
+            <format attr='line-pattern-only' scope='rows' value='solid' />
+            <format attr='div-level' scope='rows' value='0' />
+            <format attr='div-level' scope='cols' value='1' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='color' value='#ffffff' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='trendline'>
+                <format attr='stroke-color' value='#00000000' />
+                <format attr='stroke-size' value='0' />
+                <format attr='line-visibility' value='off' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0j9ml6512ky7c214df6h30l8mprs].[usr:Calculation_129056342782562304:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:category:nk]' />
+              <text column='[federated.0j9ml6512ky7c214df6h30l8mprs].[usr:Calculation_129056342782562304:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.3073480129241943' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='stroke-color' value='#00000000' />
+                <format attr='stroke-size' value='0' />
+                <format attr='line-visibility' value='off' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0j9ml6512ky7c214df6h30l8mprs].[usr:Calculation_129056342785335297:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:category:nk]' />
+              <text column='[federated.0j9ml6512ky7c214df6h30l8mprs].[usr:Calculation_129056342785335297:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Category:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0j9ml6512ky7c214df6h30l8mprs].[none:category:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Venue:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0j9ml6512ky7c214df6h30l8mprs].[none:venue (venue_major_categories.csv):nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run bold='true'><![CDATA[<[federated.0j9ml6512ky7c214df6h30l8mprs].[usr:Calculation_129056342785335297:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run bold='true'><![CDATA[<Sheet name="Events by Capacity" maxwidth="1000" maxheight="1000" filter="<All Fields>">]]></run>
+                <run>Æ&#10;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.3073480129241943' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='stroke-color' value='#00000000' />
+                <format attr='stroke-size' value='0' />
+                <format attr='line-visibility' value='off' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0j9ml6512ky7c214df6h30l8mprs].[sum:Calculation_5035024450376126466:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <text column='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:venue (venue_major_categories.csv):nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Category:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0j9ml6512ky7c214df6h30l8mprs].[none:category:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Venue:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0j9ml6512ky7c214df6h30l8mprs].[none:venue (venue_major_categories.csv):nk]>]]></run>
+                <run>Æ&#10;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run>&lt;</run>
+                <run>[federated.0j9ml6512ky7c214df6h30l8mprs].[none:venue (venue_major_categories.csv):nk]</run>
+                <run>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='size' value='0.0099999997764825821' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='stroke-color' value='#00000000' />
+                <format attr='stroke-size' value='0' />
+                <format attr='line-visibility' value='off' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0j9ml6512ky7c214df6h30l8mprs].[none:venue (venue_major_categories.csv):nk] / [federated.0j9ml6512ky7c214df6h30l8mprs].[none:category:nk])</rows>
+        <cols>([federated.0j9ml6512ky7c214df6h30l8mprs].[usr:Calculation_129056342782562304:qk] + ([federated.0j9ml6512ky7c214df6h30l8mprs].[sum:Calculation_5035024450376126466:qk] + [federated.0j9ml6512ky7c214df6h30l8mprs].[usr:Calculation_129056342785335297:qk]))</cols>
+      </table>
+      <simple-id uuid='{B60C51DC-BC67-4F83-986E-9863FF51A20D}' />
+    </worksheet>
+    <worksheet name='Events by Capacity'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='venue_capacities+' name='federated.0j9ml6512ky7c214df6h30l8mprs' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0j9ml6512ky7c214df6h30l8mprs'>
+            <column caption='Combined Capacity' datatype='real' name='[Calculation_129056342782562304]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([Capacity])*[Calculation_129056342785335297]' />
+            </column>
+            <column caption='Count of Event' datatype='integer' name='[Calculation_129056342785335297]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT([name])' />
+            </column>
+            <column datatype='real' name='[Capacity]' role='measure' type='quantitative' />
+            <column datatype='string' name='[category]' role='dimension' type='nominal' />
+            <column caption='Event' datatype='string' name='[name]' role='dimension' type='nominal' />
+            <column-instance column='[name]' derivation='None' name='[none:name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[venue]' derivation='None' name='[none:venue:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_129056342785335297]' derivation='User' name='[pcto:usr:Calculation_129056342785335297:qk:2]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:name:nk]' ordering-type='Field' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[Calculation_129056342782562304]' derivation='User' name='[usr:Calculation_129056342782562304:qk]' pivot='key' type='quantitative' />
+            <column datatype='string' name='[venue (venue_major_categories.csv)]' role='dimension' type='nominal' />
+            <column caption='Venue' datatype='string' name='[venue]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0j9ml6512ky7c214df6h30l8mprs].[Action (category)]'>
+            <groupfilter function='level-members' level='[category]' user:ui-action-filter='[Action1_FBDBCDEB17F148A79C63D5BDBC00CF2B]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0j9ml6512ky7c214df6h30l8mprs].[Tooltip (category,venue (venue_major_categories.csv))]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action - Events by Capacity]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[category]' />
+              <groupfilter function='level-members' level='[venue (venue_major_categories.csv)]' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:name:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;Grand Ole Opry&quot;</bucket>
+              <bucket>&quot;The Time Jumpers&quot;</bucket>
+              <bucket>&quot;Nashville Ballet - The Nutcracker&quot;</bucket>
+              <bucket>&quot;Backstage Nashville&quot;</bucket>
+              <bucket>&quot;Rent&quot;</bucket>
+              <bucket>&quot;The Cake&quot;</bucket>
+              <bucket>&quot;Pretty Woman&quot;</bucket>
+              <bucket>&quot;Opry Country Classics&quot;</bucket>
+              <bucket>&quot;Opry Country Christmas Show&quot;</bucket>
+              <bucket>&quot;Jason Isbell&quot;</bucket>
+              <bucket>&quot;Hadestown&quot;</bucket>
+              <bucket>&quot;Elf the Musical&quot;</bucket>
+              <bucket>&quot;Disney On Ice: Let&apos;s Celebrate&quot;</bucket>
+              <bucket>&quot;Nashville Ballet - Cinderella&quot;</bucket>
+              <bucket>&quot;Kyle Kinane (18+ Event)&quot;</bucket>
+              <bucket>&quot;Kyle Kinane&quot;</bucket>
+              <bucket>&quot;Jeremy Piven (18+ Event)&quot;</bucket>
+              <bucket>&quot;Earthquake (18+ Event)&quot;</bucket>
+              <bucket>&quot;Christina P (18+ Event)&quot;</bucket>
+              <bucket>&quot;Music City Christmas&quot;</bucket>
+              <bucket>&quot;Drew Lynch (18+ Event)&quot;</bucket>
+              <bucket>&quot;Drew Lynch&quot;</bucket>
+              <bucket>&quot;Dan Cummins (18+ Event)&quot;</bucket>
+              <bucket>&quot;Dan Cummins&quot;</bucket>
+              <bucket>&quot;Brian McKnight&quot;</bucket>
+              <bucket>&quot;Vanessa Williams&quot;</bucket>
+              <bucket>&quot;Tony Desare&quot;</bucket>
+              <bucket>&quot;Nashville Symphony &amp; Chorus - Handel&apos;s Messiah&quot;</bucket>
+              <bucket>&quot;Nashville Symphony - Trailblazing Women&quot;</bucket>
+              <bucket>&quot;Nashville Symphony - Home Alone&quot;</bucket>
+              <bucket>&quot;Nashville Symphony - Ghostbusters&quot;</bucket>
+              <bucket>&quot;Marc Broussard&quot;</bucket>
+              <bucket>&quot;Brett Eldredge&quot;</bucket>
+              <bucket>&quot;You Got Gold - Life and Songs of John Prine&quot;</bucket>
+              <bucket>&quot;Widespread Panic&quot;</bucket>
+              <bucket>&quot;Watchhouse&quot;</bucket>
+              <bucket>&quot;Tony Hinchcliffe (18+ Event)&quot;</bucket>
+              <bucket>&quot;The Mavericks&quot;</bucket>
+              <bucket>&quot;The Marcus King Band&quot;</bucket>
+              <bucket>&quot;Surf Curse&quot;</bucket>
+              <bucket>&quot;Steven Crowder and Dave Landau&quot;</bucket>
+              <bucket>&quot;Sabaton&quot;</bucket>
+              <bucket>&quot;Ray Wylie Hubbard&quot;</bucket>
+              <bucket>&quot;Nutcracker! The Magic of Christmas Ballet&quot;</bucket>
+              <bucket>&quot;Nashville Symphony - Mozart and Tchaikovsky&quot;</bucket>
+              <bucket>&quot;Nashville Symphony - Holst&apos;s The Planets&quot;</bucket>
+              <bucket>&quot;Nashville Symphony - Beethoven and Sibelius&quot;</bucket>
+              <bucket>&quot;Mt. Joy&quot;</bucket>
+              <bucket>&quot;Moscow Ballet: Nutcracker! Magic of Christmas&quot;</bucket>
+              <bucket>&quot;Jordan Davis&quot;</bucket>
+              <bucket>&quot;For King And Country&quot;</bucket>
+              <bucket>&quot;Craig Ferguson&quot;</bucket>
+              <bucket>&quot;Collective Soul&quot;</bucket>
+              <bucket>&quot;Cole Swindell&quot;</bucket>
+              <bucket>&quot;Chris Botti&quot;</bucket>
+              <bucket>&quot;Carsie Blanton&quot;</bucket>
+              <bucket>&quot;Carly Pearce&quot;</bucket>
+              <bucket>&quot;Anjelah Johnson&quot;</bucket>
+              <bucket>&quot;Andrew Peterson&quot;</bucket>
+              <bucket>&quot;ZZ Top&quot;</bucket>
+              <bucket>&quot;Zach Bryan&quot;</bucket>
+              <bucket>&quot;Yung Gravy&quot;</bucket>
+              <bucket>&quot;Yacht Rock Revue&quot;</bucket>
+              <bucket>&quot;Wanda Sykes&quot;</bucket>
+              <bucket>&quot;W.A.S.P.&quot;</bucket>
+              <bucket>&quot;Violent Femmes&quot;</bucket>
+              <bucket>&quot;Twenty One Pilots&quot;</bucket>
+              <bucket>&quot;Trombone Shorty And Orleans Avenue&quot;</bucket>
+              <bucket>&quot;Trivium&quot;</bucket>
+              <bucket>&quot;Too Many Zooz&quot;</bucket>
+              <bucket>&quot;Tommy Emmanuel&quot;</bucket>
+              <bucket>&quot;Todd Snider&quot;</bucket>
+              <bucket>&quot;The Wallflowers&quot;</bucket>
+              <bucket>&quot;The Smile&quot;</bucket>
+              <bucket>&quot;The Sheepdogs&quot;</bucket>
+              <bucket>&quot;The Piano Guys&quot;</bucket>
+              <bucket>&quot;The Lumineers&quot;</bucket>
+              <bucket>&quot;The Killers&quot;</bucket>
+              <bucket>&quot;The Judds&quot;</bucket>
+              <bucket>&quot;The Head and The Heart&quot;</bucket>
+              <bucket>&quot;The 1975&quot;</bucket>
+              <bucket>&quot;Terry Fator (Rescheduled from 8/16/20)&quot;</bucket>
+              <bucket>&quot;Terry Fator&quot;</bucket>
+              <bucket>&quot;Suicide Boys&quot;</bucket>
+              <bucket>&quot;Stevie Nicks&quot;</bucket>
+              <bucket>&quot;Steve Vai&quot;</bucket>
+              <bucket>&quot;Steve Lacy&quot;</bucket>
+              <bucket>&quot;Steve Earle&quot;</bucket>
+              <bucket>&quot;Stereolab&quot;</bucket>
+              <bucket>&quot;Spoon&quot;</bucket>
+              <bucket>&quot;Smokey Robinson&quot;</bucket>
+              <bucket>&quot;Smashing Pumpkins with Janes Addiction&quot;</bucket>
+              <bucket>&quot;Sabrina Claudio&quot;</bucket>
+              <bucket>&quot;Rufus Du Sol&quot;</bucket>
+              <bucket>&quot;Ronnie Milsap&quot;</bucket>
+              <bucket>&quot;Robert Plant and Alison Krauss&quot;</bucket>
+              <bucket>&quot;Rina Sawayama&quot;</bucket>
+              <bucket>&quot;Regina Spektor&quot;</bucket>
+              <bucket>&quot;Reba McEntire&quot;</bucket>
+              <bucket>&quot;Rainbow Kitten Surprise&quot;</bucket>
+              <bucket>&quot;Puscifer&quot;</bucket>
+              <bucket>&quot;Postmodern Jukebox&quot;</bucket>
+              <bucket>&quot;Post Malone&quot;</bucket>
+              <bucket>&quot;Pitbull&quot;</bucket>
+              <bucket>&quot;Phoenix&quot;</bucket>
+              <bucket>&quot;Pearl Jam&quot;</bucket>
+              <bucket>&quot;Panic! at the Disco&quot;</bucket>
+              <bucket>&quot;OneRepublic&quot;</bucket>
+              <bucket>&quot;Old Crow Medicine Show&quot;</bucket>
+              <bucket>&quot;Noah Cyrus&quot;</bucket>
+              <bucket>&quot;Nitty Gritty Dirt Band&quot;</bucket>
+              <bucket>&quot;Nick Swardson&quot;</bucket>
+              <bucket>&quot;Nashville Symphony - Go Now! The Music of the Moody Blues&quot;</bucket>
+              <bucket>&quot;My Morning Jacket&quot;</bucket>
+              <bucket>&quot;Mike Birbiglia&quot;</bucket>
+              <bucket>&quot;Matt Nathanson&quot;</bucket>
+              <bucket>&quot;Mary J. Blige&quot;</bucket>
+              <bucket>&quot;Maren Morris&quot;</bucket>
+              <bucket>&quot;Marcus Mumford&quot;</bucket>
+              <bucket>&quot;Mannheim Steamroller&quot;</bucket>
+              <bucket>&quot;Madeleine Peyroux&quot;</bucket>
+              <bucket>&quot;Los Tigres del Norte&quot;</bucket>
+              <bucket>&quot;Lizzo&quot;</bucket>
+              <bucket>&quot;Lil Nas X&quot;</bucket>
+              <bucket>&quot;Ledisi Sings Nina&quot;</bucket>
+              <bucket>&quot;LeAnn Rimes&quot;</bucket>
+              <bucket>&quot;Lauv&quot;</bucket>
+              <bucket>&quot;Knotfest Roadshow&quot;</bucket>
+              <bucket>&quot;Kevin Morby&quot;</bucket>
+              <bucket>&quot;Kevin Hart&quot;</bucket>
+              <bucket>&quot;Kevin Gates&quot;</bucket>
+              <bucket>&quot;Keith Urban&quot;</bucket>
+              <bucket>&quot;Jukebox the Ghost&quot;</bucket>
+              <bucket>&quot;Jon Pardi&quot;</bucket>
+              <bucket>&quot;Joe Satriani&quot;</bucket>
+              <bucket>&quot;Jim Jefferies&quot;</bucket>
+              <bucket>&quot;Jelly Roll&quot;</bucket>
+              <bucket>&quot;Jason Bonhams Led Zeppelin Experience&quot;</bucket>
+              <bucket>&quot;Jason Aldean&quot;</bucket>
+              <bucket>&quot;Jack Harlow&quot;</bucket>
+              <bucket>&quot;I Prevail&quot;</bucket>
+              <bucket>&quot;Highly Suspect&quot;</bucket>
+              <bucket>&quot;Here Come The Mummies&quot;</bucket>
+              <bucket>&quot;Haim&quot;</bucket>
+              <bucket>&quot;Gloria Trevi&quot;</bucket>
+              <bucket>&quot;Giveon&quot;</bucket>
+              <bucket>&quot;Girls Gotta Eat&quot;</bucket>
+              <bucket>&quot;Gipsy Kings&quot;</bucket>
+              <bucket>&quot;Foals&quot;</bucket>
+              <bucket>&quot;Florence and the Machine&quot;</bucket>
+              <bucket>&quot;Father John Misty&quot;</bucket>
+              <bucket>&quot;Elton John&quot;</bucket>
+              <bucket>&quot;Earth, Wind &amp; Fire&quot;</bucket>
+              <bucket>&quot;Drew and Ellie Holcombs Neighborly Christmas&quot;</bucket>
+              <bucket>&quot;Doobie Brothers&quot;</bucket>
+              <bucket>&quot;Disney Junior Live: Dance Party&quot;</bucket>
+              <bucket>&quot;Diana Krall&quot;</bucket>
+              <bucket>&quot;Demi Lovato&quot;</bucket>
+              <bucket>&quot;Dayglow&quot;</bucket>
+              <bucket>&quot;Danny Gokey&quot;</bucket>
+              <bucket>&quot;Daniel Howell&quot;</bucket>
+              <bucket>&quot;Crowded House&quot;</bucket>
+              <bucket>&quot;Clutch&quot;</bucket>
+              <bucket>&quot;Claudia Oshry&quot;</bucket>
+              <bucket>&quot;Chelsea Cutler&quot;</bucket>
+              <bucket>&quot;Celebrating David Bowie&quot;</bucket>
+              <bucket>&quot;Carbon Leaf&quot;</bucket>
+              <bucket>&quot;Bring Me the Horizon&quot;</bucket>
+              <bucket>&quot;Brian Culbertson&quot;</bucket>
+              <bucket>&quot;Bret McKenzie&quot;</bucket>
+              <bucket>&quot;Boney James&quot;</bucket>
+              <bucket>&quot;Blues Clues&quot;</bucket>
+              <bucket>&quot;Ben Platt&quot;</bucket>
+              <bucket>&quot;Backstreet Boys&quot;</bucket>
+              <bucket>&quot;Arizona&quot;</bucket>
+              <bucket>&quot;And That&apos;s Why We Drink Podcast&quot;</bucket>
+              <bucket>&quot;Allman Family Revival&quot;</bucket>
+              <bucket>&quot;Alicia Keys&quot;</bucket>
+              <bucket>&quot;Alec Benjamin&quot;</bucket>
+              <bucket>&quot;Al Di Meola&quot;</bucket>
+              <bucket>&quot;Air Supply&quot;</bucket>
+              <bucket>&quot;Aaron Lewis&quot;</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:venue:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:venue:nk]' />
+              <groupfilter function='member' level='[none:venue:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0j9ml6512ky7c214df6h30l8mprs].[none:venue:nk]</column>
+            <column>[federated.0j9ml6512ky7c214df6h30l8mprs].[Action (category)]</column>
+            <column>[federated.0j9ml6512ky7c214df6h30l8mprs].[Tooltip (category,venue (venue_major_categories.csv))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0j9ml6512ky7c214df6h30l8mprs].[pcto:usr:Calculation_129056342785335297:qk:2]' scope='cols' value='Percent of All Events' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='size-bar' field='[federated.0j9ml6512ky7c214df6h30l8mprs].[pcto:usr:Calculation_129056342785335297:qk:2]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='show-null-value-warning' value='false' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='stroke-color' id='refline0' value='#000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.0j9ml6512ky7c214df6h30l8mprs].[usr:Calculation_129056342782562304:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0j9ml6512ky7c214df6h30l8mprs].[none:name:nk]</rows>
+        <cols>[federated.0j9ml6512ky7c214df6h30l8mprs].[pcto:usr:Calculation_129056342785335297:qk:2]</cols>
+      </table>
+      <simple-id uuid='{33FC9E75-3D26-4BEF-9A74-C65B05022ECE}' />
+    </worksheet>
+    <worksheet name='Num of Events by Venue'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Venue Capacity and Show Frequency</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='venue_capacities+' name='federated.0j9ml6512ky7c214df6h30l8mprs' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0j9ml6512ky7c214df6h30l8mprs'>
+            <column caption='Combined Capacity' datatype='real' name='[Calculation_129056342782562304]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([Capacity])*[Calculation_129056342785335297]' />
+            </column>
+            <column caption='Count of Event' datatype='integer' name='[Calculation_129056342785335297]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT([name])' />
+            </column>
+            <column datatype='real' name='[Capacity]' role='measure' type='quantitative' />
+            <column-instance column='[name]' derivation='Count' name='[cnt:name:qk]' pivot='key' type='quantitative' />
+            <column caption='Event' datatype='string' name='[name]' role='dimension' type='nominal' />
+            <column-instance column='[name]' derivation='None' name='[none:name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[venue]' derivation='None' name='[none:venue:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_129056342782562304]' derivation='User' name='[usr:Calculation_129056342782562304:qk]' pivot='key' type='quantitative' />
+            <column caption='Venue' datatype='string' name='[venue]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:name:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:name:nk]' />
+              <groupfilter function='member' level='[none:name:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:venue:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0j9ml6512ky7c214df6h30l8mprs].[usr:Calculation_129056342782562304:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0j9ml6512ky7c214df6h30l8mprs].[none:name:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='table'>
+            <format attr='show-null-value-warning' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0j9ml6512ky7c214df6h30l8mprs].[cnt:name:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run> # of Events &lt;</run>
+                <run>[federated.0j9ml6512ky7c214df6h30l8mprs].[cnt:name:qk]</run>
+                <run>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='right' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0j9ml6512ky7c214df6h30l8mprs].[none:venue:nk]</rows>
+        <cols>[federated.0j9ml6512ky7c214df6h30l8mprs].[usr:Calculation_129056342782562304:qk]</cols>
+      </table>
+      <simple-id uuid='{CA5D2EA6-5AD5-4529-A510-66DF7E3E32D1}' />
+    </worksheet>
+    <worksheet name='Pop Events by Category'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#000000'>Most Popular Events by Category</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='venue_capacities+' name='federated.0j9ml6512ky7c214df6h30l8mprs' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0j9ml6512ky7c214df6h30l8mprs'>
+            <column caption='Count of Event' datatype='integer' name='[Calculation_129056342785335297]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT([name])' />
+            </column>
+            <column datatype='real' name='[Capacity]' role='measure' type='quantitative' />
+            <column-instance column='[Capacity]' derivation='Avg' name='[avg:Capacity:qk]' pivot='key' type='quantitative' />
+            <column datatype='string' name='[category]' role='dimension' type='nominal' />
+            <column caption='Dates' datatype='date' name='[dates]' role='dimension' type='ordinal' />
+            <column-instance column='[dates]' derivation='Month' name='[mn:dates:ok]' pivot='key' type='ordinal' />
+            <column caption='Event' datatype='string' name='[name]' role='dimension' type='nominal' />
+            <column-instance column='[category]' derivation='None' name='[none:category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_129056342785335297]' derivation='User' name='[pcto:usr:Calculation_129056342785335297:qk:1]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:category:nk]' ordering-type='Field' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[dates]' derivation='Weekday' name='[wd:dates:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[dates]' derivation='Week' name='[wk:dates:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0j9ml6512ky7c214df6h30l8mprs].[Action (Dates,MONTH(Dates),WEEK(Dates),WEEKDAY(Dates))]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2_F3D60C85019A4196A8B336317211D4F3]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[dates]' />
+              <groupfilter function='level-members' level='[mn:dates:ok]' />
+              <groupfilter function='level-members' level='[wk:dates:ok]' />
+              <groupfilter function='level-members' level='[wd:dates:ok]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:category:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:category:nk]' />
+              <groupfilter function='member' level='[none:category:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0j9ml6512ky7c214df6h30l8mprs].[none:category:nk]</column>
+            <column>[federated.0j9ml6512ky7c214df6h30l8mprs].[Action (Dates,MONTH(Dates),WEEK(Dates),WEEKDAY(Dates))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='font-size' data-class='subtotal' scope='rows' value='9' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='font-size' data-class='total' value='9' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='font-size' value='14' />
+          </style-rule>
+          <style-rule element='tooltip'>
+            <format attr='font-size' value='10' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:category:nk]' />
+              <size column='[federated.0j9ml6512ky7c214df6h30l8mprs].[pcto:usr:Calculation_129056342785335297:qk:1]' />
+              <text column='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:category:nk]' />
+              <text column='[federated.0j9ml6512ky7c214df6h30l8mprs].[pcto:usr:Calculation_129056342785335297:qk:1]' />
+              <text column='[federated.0j9ml6512ky7c214df6h30l8mprs].[avg:Capacity:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run><![CDATA[<[federated.0j9ml6512ky7c214df6h30l8mprs].[none:category:nk]>
+Average Capacity   ]]></run>
+                <run bold='true'><![CDATA[<[federated.0j9ml6512ky7c214df6h30l8mprs].[avg:Capacity:qk]>]]></run>
+                <run>&#10;Percent of All Shows  </run>
+                <run bold='true'><![CDATA[<[federated.0j9ml6512ky7c214df6h30l8mprs].[pcto:usr:Calculation_129056342785335297:qk:1]>]]></run>
+                <run>Æ&#10;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='center' />
+                <format attr='wrap' value='auto' />
+              </style-rule>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='10' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{69C13913-6062-4E7E-AF68-559845A91C33}' />
+    </worksheet>
+    <worksheet name='Sheet 11'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='venue_capacities+' name='federated.0j9ml6512ky7c214df6h30l8mprs' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0j9ml6512ky7c214df6h30l8mprs'>
+            <column datatype='real' name='[Capacity]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Size]' role='dimension' type='nominal' />
+            <column caption='Venue1' datatype='string' name='[Venue]' role='dimension' type='nominal' />
+            <column-instance column='[Capacity]' derivation='Count' name='[cnt:Capacity:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Venue]' derivation='Count' name='[cnt:Venue:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[name]' derivation='Count' name='[cnt:name:qk]' pivot='key' type='quantitative' />
+            <column caption='Event' datatype='string' name='[name]' role='dimension' type='nominal' />
+            <column-instance column='[Size]' derivation='None' name='[none:Size:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Capacity]' derivation='Sum' name='[sum:Capacity:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0j9ml6512ky7c214df6h30l8mprs].[cnt:name:qk]' included-values='in-range'>
+            <min>1</min>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:Size:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0j9ml6512ky7c214df6h30l8mprs].[cnt:Capacity:qk]' shelf='columns' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0j9ml6512ky7c214df6h30l8mprs].[cnt:name:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <text column='[federated.0j9ml6512ky7c214df6h30l8mprs].[sum:Capacity:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Size Category:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0j9ml6512ky7c214df6h30l8mprs].[none:Size:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Number of Venues:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0j9ml6512ky7c214df6h30l8mprs].[cnt:Venue:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run bold='true'><![CDATA[<Sheet name="Combined Venue Capacity" maxwidth="1000" maxheight="1000" filter="<All Fields>">]]></run>
+                <run>Æ&#10;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-color' value='#b07aa1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0j9ml6512ky7c214df6h30l8mprs].[cnt:Venue:qk]</rows>
+        <cols>[federated.0j9ml6512ky7c214df6h30l8mprs].[none:Size:nk]</cols>
+      </table>
+      <simple-id uuid='{5DA72279-EAB3-461D-9339-24CA75BA18A9}' />
+    </worksheet>
+    <worksheet name='Sheet 8'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true'>Event Frequency by Date</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='venue_capacities+' name='federated.0j9ml6512ky7c214df6h30l8mprs' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0j9ml6512ky7c214df6h30l8mprs'>
+            <column caption='Count of Event' datatype='integer' name='[Calculation_129056342785335297]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT([name])' />
+            </column>
+            <column caption='Dates' datatype='date' name='[dates]' role='dimension' type='ordinal' />
+            <column-instance column='[dates]' derivation='Month' name='[mn:dates:ok]' pivot='key' type='ordinal' />
+            <column caption='Event' datatype='string' name='[name]' role='dimension' type='nominal' />
+            <column-instance column='[dates]' derivation='None' name='[none:dates:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_129056342785335297]' derivation='User' name='[usr:Calculation_129056342785335297:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[dates]' derivation='Weekday' name='[wd:dates:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[dates]' derivation='Week' name='[wk:dates:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.0j9ml6512ky7c214df6h30l8mprs].[wk:dates:ok]' value='false' />
+            <format attr='display' field='[federated.0j9ml6512ky7c214df6h30l8mprs].[mn:dates:ok]' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.0j9ml6512ky7c214df6h30l8mprs].[usr:Calculation_129056342785335297:qk]' value='Count of Event'>
+              <formatted-text>
+                <run fontalignment='1' fontsize='8'>Count of Event</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Square' />
+            <encodings>
+              <color column='[federated.0j9ml6512ky7c214df6h30l8mprs].[usr:Calculation_129056342785335297:qk]' />
+              <text column='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:dates:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Weekday of Dates:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0j9ml6512ky7c214df6h30l8mprs].[none:dates:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Week of Dates:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0j9ml6512ky7c214df6h30l8mprs].[wk:dates:ok]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Count of Event:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0j9ml6512ky7c214df6h30l8mprs].[usr:Calculation_129056342785335297:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run bold='true'><![CDATA[ <Sheet name="Sheet 9" maxwidth="1000" maxheight="1000" filter="<All Fields>">]]></run>
+                <run>Æ&#10;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0j9ml6512ky7c214df6h30l8mprs].[wk:dates:ok] / [federated.0j9ml6512ky7c214df6h30l8mprs].[mn:dates:ok])</rows>
+        <cols>[federated.0j9ml6512ky7c214df6h30l8mprs].[wd:dates:ok]</cols>
+      </table>
+      <simple-id uuid='{B8B13EA0-8131-47C4-BCE4-835F91372FD8}' />
+    </worksheet>
+    <worksheet name='Sheet 9'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Dates Events and their Showtimes</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='venue_capacities+' name='federated.0j9ml6512ky7c214df6h30l8mprs' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0j9ml6512ky7c214df6h30l8mprs'>
+            <column datatype='real' name='[Capacity]' role='measure' type='quantitative' />
+            <column caption='Dates' datatype='date' name='[dates]' role='dimension' type='ordinal' />
+            <column-instance column='[dates]' derivation='Month' name='[mn:dates:ok]' pivot='key' type='ordinal' />
+            <column caption='Event' datatype='string' name='[name]' role='dimension' type='nominal' />
+            <column-instance column='[dates]' derivation='None' name='[none:dates:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[name]' derivation='None' name='[none:name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[times]' derivation='None' name='[none:times:nk]' pivot='key' type='nominal' />
+            <column-instance column='[venue]' derivation='None' name='[none:venue:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Capacity]' derivation='Sum' name='[sum:Capacity:qk]' pivot='key' type='quantitative' />
+            <column caption='Times' datatype='string' name='[times]' role='dimension' type='nominal' />
+            <column caption='Venue' datatype='string' name='[venue]' role='dimension' type='nominal' />
+            <column-instance column='[dates]' derivation='Weekday' name='[wd:dates:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[dates]' derivation='Week' name='[wk:dates:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0j9ml6512ky7c214df6h30l8mprs].[Tooltip (Dates,MONTH(Dates),WEEK(Dates),WEEKDAY(Dates))]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action - Sheet 9]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[dates]' />
+              <groupfilter function='level-members' level='[mn:dates:ok]' />
+              <groupfilter function='level-members' level='[wk:dates:ok]' />
+              <groupfilter function='level-members' level='[wd:dates:ok]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:name:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:name:nk]' />
+              <groupfilter function='member' level='[none:name:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0j9ml6512ky7c214df6h30l8mprs].[none:name:nk]</column>
+            <column>[federated.0j9ml6512ky7c214df6h30l8mprs].[Tooltip (Dates,MONTH(Dates),WEEK(Dates),WEEKDAY(Dates))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' value='147' />
+            <format attr='height' field='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:venue:nk]' value='30' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='height-header' value='28' />
+            <format attr='width' field='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:name:nk]' value='244' />
+            <format attr='width' field='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:venue:nk]' value='180' />
+          </style-rule>
+          <style-rule element='field-labels-decoration'>
+            <format attr='font-style' value='normal' />
+            <format attr='font-weight' value='normal' />
+            <format attr='text-orientation' value='0' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='show-null-value-warning' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <text column='[federated.0j9ml6512ky7c214df6h30l8mprs].[sum:Capacity:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='auto' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0j9ml6512ky7c214df6h30l8mprs].[none:dates:ok] / ([federated.0j9ml6512ky7c214df6h30l8mprs].[none:name:nk] / ([federated.0j9ml6512ky7c214df6h30l8mprs].[none:venue:nk] / [federated.0j9ml6512ky7c214df6h30l8mprs].[none:times:nk])))</rows>
+        <cols>[federated.0j9ml6512ky7c214df6h30l8mprs].[sum:Capacity:qk]</cols>
+      </table>
+      <simple-id uuid='{96E907C3-4667-48C1-B52F-1311233D3285}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size maxheight='768' maxwidth='1366' minheight='768' minwidth='1366' preset-index='0' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='27' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='100000' id='30' param='horz' type-v2='layout-flow' w='100000' x='0' y='0'>
+            <zone fixed-size='160' h='100000' id='29' is-fixed='true' param='vert' type-v2='layout-flow' w='100000' x='0' y='0' />
+          </zone>
+        </zone>
+        <zone h='97005' id='3' name='Pop Events by Category' w='47365' x='439' y='2604' />
+        <zone h='98307' id='26' name='Sheet 8' w='51025' x='48682' y='1172' />
+        <zone h='3125' id='32' type-v2='dashboard-object' w='1757' x='97218' y='1693'>
+          <button action=''>
+            <toggle-action>tabdoc:toggle-button-click-action window-id=&quot;{678A72B4-9DB1-44D9-89DF-37A16141A2E7}&quot; zone-id=&quot;32&quot; zone-ids=[31]</toggle-action>
+            <button-visual-state />
+            <button-visual-state />
+          </button>
+        </zone>
+        <zone h='5339' id='31' name='Sheet 8' pane-specification-id='0' param='[federated.0j9ml6512ky7c214df6h30l8mprs].[usr:Calculation_129056342785335297:qk]' type-v2='color' w='10249' x='86603' y='781' />
+      </zones>
+      <devicelayouts>
+        <devicelayout name='Phone'>
+          <zones>
+            <zone h='100000' id='27' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='100000' id='30' param='horz' type-v2='layout-flow' w='100000' x='0' y='0'>
+                <zone fixed-size='160' h='100000' id='29' is-fixed='true' param='vert' type-v2='layout-flow' w='100000' x='0' y='0' />
+              </zone>
+            </zone>
+            <zone h='97005' id='3' name='Pop Events by Category' w='47365' x='439' y='2604' />
+            <zone h='98307' id='26' name='Sheet 8' w='51025' x='48682' y='1172' />
+            <zone h='3125' id='32' type-v2='dashboard-object' w='1757' x='97218' y='1693'>
+              <button action=''>
+                <toggle-action>tabdoc:toggle-button-click-action window-id=&quot;{678A72B4-9DB1-44D9-89DF-37A16141A2E7}&quot; zone-id=&quot;32&quot; zone-ids=[31]</toggle-action>
+                <button-visual-state />
+                <button-visual-state />
+              </button>
+            </zone>
+            <zone h='5339' id='31' name='Sheet 8' pane-specification-id='0' param='[federated.0j9ml6512ky7c214df6h30l8mprs].[usr:Calculation_129056342785335297:qk]' type-v2='color' w='10249' x='86603' y='781' />
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{8814697D-710F-425C-AB2C-350543CBF033}' />
+    </dashboard>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard 2'>
+      <style />
+      <size maxheight='768' maxwidth='1366' minheight='768' minwidth='1366' preset-index='0' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='97916' id='7' param='horz' type-v2='layout-flow' w='98828' x='586' y='1042'>
+            <zone h='97916' id='5' type-v2='layout-basic' w='87115' x='586' y='1042' />
+            <zone fixed-size='160' h='97916' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='11713' x='87701' y='1042' />
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='95750' id='3' name='Event Category By Venue' w='96500' x='3300' y='4125' />
+        <zone h='12240' id='8' name='Event Category By Venue' pane-specification-id='1' param='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:category:nk]' type-v2='color' w='14056' x='82650' y='13021' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='12' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97916' id='11' param='vert' type-v2='layout-flow' w='98828' x='586' y='1042'>
+                <zone fixed-size='280' h='95750' id='3' is-fixed='true' name='Event Category By Venue' w='96500' x='3300' y='4125'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='12240' id='8' name='Event Category By Venue' pane-specification-id='1' param='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:category:nk]' type-v2='color' w='14056' x='82650' y='13021'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{46A48A44-67E2-4474-BE63-884F2F1548CF}' />
+    </dashboard>
+    <dashboard name='Story 1' type='storyboard'>
+      <style>
+        <style-rule element='table'>
+          <format attr='background-color' value='#00000000' />
+        </style-rule>
+      </style>
+      <size maxheight='964' maxwidth='1016' minheight='964' minwidth='1016' />
+      <zones>
+        <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98340' id='1' param='vert' removable='false' type-v2='layout-flow' w='98426' x='787' y='830'>
+            <zone h='3423' id='3' type-v2='title' w='98426' x='787' y='830' />
+            <zone h='10477' id='4' is-fixed='true' paired-zone-id='5' removable='false' type-v2='flipboard-nav' w='98426' x='787' y='4253' />
+            <zone h='84440' id='5' paired-zone-id='4' removable='false' type-v2='flipboard' w='98426' x='787' y='14730'>
+              <flipboard active-id='1' nav-type='caption' show-nav-arrows='true'>
+                <story-points>
+                  <story-point captured-sheet='' id='1' />
+                </story-points>
+              </flipboard>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <simple-id uuid='{C5F47CD3-8819-4F0F-B77D-0836B70342B5}' />
+    </dashboard>
+  </dashboards>
+  <windows film-mode='true' source-height='30'>
+    <window class='worksheet' name='Num of Events by Venue'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{112AB66C-8678-497D-807A-7F246261ED81}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Events by Capacity'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0j9ml6512ky7c214df6h30l8mprs].[Action (category)]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{AAD4EB76-CD1F-42E9-9EC5-F614BDD43E9C}' />
+    </window>
+    <window class='worksheet' name='Days of the Week'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0j9ml6512ky7c214df6h30l8mprs].[wd:dates:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{B3D2D23D-0DF3-40BB-BD46-6E8A3F2E2B65}' />
+    </window>
+    <window class='worksheet' name='Pop Events by Category'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:category:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{428D450F-A797-4389-98A0-81229EB828F1}' />
+    </window>
+    <window class='worksheet' name='Event Category By Venue'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.0j9ml6512ky7c214df6h30l8mprs].[none:category:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{88728068-64C2-458F-A0FF-ACA3FE576AD0}' />
+    </window>
+    <window class='worksheet' name='Sheet 8'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0j9ml6512ky7c214df6h30l8mprs].[usr:Calculation_129056342785335297:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{3CDAFB30-5633-4AD8-A268-C768DC26555C}' />
+    </window>
+    <window class='worksheet' name='Sheet 9'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{57EA53B4-4830-4B94-A186-F7CF9677ED1B}' />
+    </window>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Pop Events by Category'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sheet 8'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{678A72B4-9DB1-44D9-89DF-37A16141A2E7}' />
+    </window>
+    <window class='worksheet' name='Sheet 11'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+      </viewpoint>
+      <simple-id uuid='{A247D5D7-D261-489C-BF15-EA91A06EC218}' />
+    </window>
+    <window class='worksheet' name='Combined Venue Capacity'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{DE20B714-C746-4764-809E-9323653F7AED}' />
+    </window>
+    <window class='dashboard' name='Story 1'>
+      <viewpoints />
+      <active id='-1' />
+      <simple-id uuid='{57BBAD4D-89A4-4F07-9F7E-876C502E6AB1}' />
+    </window>
+    <window class='dashboard' name='Dashboard 2'>
+      <viewpoints>
+        <viewpoint name='Event Category By Venue'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{3D8D16C6-CA6F-45DB-8530-A2F6FE2B5278}' />
+    </window>
+  </windows>
+</workbook>
