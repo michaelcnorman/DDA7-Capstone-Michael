@@ -1,5 +1,6 @@
-# The Most Popular Events in Nashville
-#### Based on data scraped from www.Nashville-Theatre.com
+# Analyzing the Popularity of Events in Nashville
+#### Based on events listed on Nashville-Theatre.com
+A web-scraping data analysis project conducted in Python by Michael Norman to satisfy completion of the Full Time Data Analytics Bootcamp at Nashville Software School.
 
 ## Table of Contets
 - [Motivation](#Motivation)
@@ -159,28 +160,28 @@ https://public.tableau.com/app/profile/michael.c.norman
 
     *Capacity of Events
     https://en.wikipedia.org/wiki/Bridgestone_Arena
-https://www.tpac.org/rentals/james-k-polk-theater/ 
-https://www.tpac.org/rentals/andrew-jackson-hall/ 
-https://nashvilledowntown.com/go/ascend-amphitheater 
-https://www.firstbankamphitheater.com/ 
-https://www.opry.com/story/a-look-at-the-6-homes-of-the-grand-ole-opry 
-https://ryman.com/about/ 
-https://www.visitmusiccity.com/local-business/marathon-music-works-0 
-https://www.countrymusichalloffame.org/plan-your-visit/venue-rental/spaces/cma-theater 
-https://www.nashvilleauditorium.com/general-information 
-https://citywinery.com/nashville/Online/default.asp?BOparam::WScontent::loadArticle::permalink=nashville-venue-information&BOparam::WScontent::loadArticle::context_id=&menu_id=B0A4DA65-1FC7-4AFA-98C5-FD164575AFA1 
-https://www.tpac.org/rentals/war-memorial-auditorium/ 
-https://www.nashvillesymphony.org/about/schermerhorn-symphony-center/ 
-https://en.wikipedia.org/wiki/Zanies_Comedy_Club 
-https://www.3rdandlindsley.com/faq/ 
-https://www.indieonthemove.com/venues/the-basement-east-nashville-tennessee 
-https://www.countrymusichalloffame.org/plan-your-visit/venue-rental/spaces/cma-theater 
-https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi8lqjzrbr5AhXtkmoFHSrYAuUQFnoECBoQAw&url=https%3A%2F%2Fwww.vanderbilt.edu%2Fstudentcenters%2Freservation-guidelines%2F&usg=AOvVaw3Rj2YhUyW2RvuLH2IEJy1C 
-https://exitin.com/booking/ 
-https://www.indieonthemove.com/venues/the-end-nashville-tennessee 
-https://www.rymanhp.com/property/wildhorse-saloon/ 
-https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjT4-yCrrr5AhXOgmoFHXZ-CzwQFnoECC8QAQ&url=https%3A%2F%2Fwww.stadiumsofprofootball.com%2Fstadiums%2Fnissan-stadium%2F&usg=AOvVaw0etRSk76pt05BwM65zPyZ6 
-https://www.tpac.org/rentals/andrew-johnson-theater/ 
-https://www.indieonthemove.com/venues/the-basement-nashville-tennessee 
-https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjintPZs7r5AhUylmoFHX8YDJYQFnoECB4QAw&url=https%3A%2F%2Fwww.mercylounge.com%2Fabout%2F&usg=AOvVaw3hD9aOrBluh7_v7-N_Q_kN 
+https://www.tpac.org/rentals/james-k-polk-theater/
+https://www.tpac.org/rentals/andrew-jackson-hall/
+https://nashvilledowntown.com/go/ascend-amphitheater
+https://www.firstbankamphitheater.com/
+https://www.opry.com/story/a-look-at-the-6-homes-of-the-grand-ole-opry
+https://ryman.com/about/
+https://www.visitmusiccity.com/local-business/marathon-music-works-0
+https://www.countrymusichalloffame.org/plan-your-visit/venue-rental/spaces/cma-theater
+https://www.nashvilleauditorium.com/general-information
+https://citywinery.com/nashville/Online/default.asp?BOparam::WScontent::loadArticle::permalink=nashville-venue-information&BOparam::WScontent::loadArticle::context_id=&menu_id=B0A4DA65-1FC7-4AFA-98C5-FD164575AFA1
+https://www.tpac.org/rentals/war-memorial-auditorium/
+https://www.nashvillesymphony.org/about/schermerhorn-symphony-center/
+https://en.wikipedia.org/wiki/Zanies_Comedy_Club
+https://www.3rdandlindsley.com/faq/
+https://www.indieonthemove.com/venues/the-basement-east-nashville-tennessee
+https://www.countrymusichalloffame.org/plan-your-visit/venue-rental/spaces/cma-theater
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi8lqjzrbr5AhXtkmoFHSrYAuUQFnoECBoQAw&url=https%3A%2F%2Fwww.vanderbilt.edu%2Fstudentcenters%2Freservation-guidelines%2F&usg=AOvVaw3Rj2YhUyW2RvuLH2IEJy1C
+https://exitin.com/booking/
+https://www.indieonthemove.com/venues/the-end-nashville-tennessee
+https://www.rymanhp.com/property/wildhorse-saloon/
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjT4-yCrrr5AhXOgmoFHXZ-CzwQFnoECC8QAQ&url=https%3A%2F%2Fwww.stadiumsofprofootball.com%2Fstadiums%2Fnissan-stadium%2F&usg=AOvVaw0etRSk76pt05BwM65zPyZ6
+https://www.tpac.org/rentals/andrew-johnson-theater/
+https://www.indieonthemove.com/venues/the-basement-nashville-tennessee
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjintPZs7r5AhUylmoFHX8YDJYQFnoECB4QAw&url=https%3A%2F%2Fwww.mercylounge.com%2Fabout%2F&usg=AOvVaw3hD9aOrBluh7_v7-N_Q_kN
   </details>
